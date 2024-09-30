@@ -12,7 +12,7 @@ func main() {
 		Use:   "pginer",
 		Short: "pginer 是一个简单的命令行工具",
 		Run: func(cmd *cobra.Command, args []string) {
-			fmt.Println("Hello, World!")
+			fmt.Println("Hello, World11!")
 		},
 	}
 
