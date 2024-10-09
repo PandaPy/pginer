@@ -1,0 +1,40 @@
+# Pginer settings for the project.
+# This configuration file, for version 1.0.1, contains the settings and configurations 
+# required to initialize and run the backend.
+
+# 监听端口
+LISTEN: 8083
+
+# debug | release | test
+MODE: debug
+
+ALLOWED_HOSTS: ['*']
+
+ROUTER_PREFIX: /api
+
+SECRET_KEY: pginer-insecure-m&3@6dz19mn+gq^+j-9yqbd8jr)*twrdtbp2evjs*h!#wy*$bj
+
+# Database
+DATABASES:
+  default:
+    HOST: rm-bp12934z71mp4h7sreo.mysql.rds.aliyuncs.com
+    NAME: cyxny_web_go
+    USER: cyxny
+    PASSWORD: VLRtbNvCE39H
+    PORT: 3306
+    CONFIG: charset=utf8mb4&parseTime=True&loc=Local
+  # smy:
+  #   NAME: database
+  #   USER: postgres
+  #   PASSWORD: panda112131
+  #   HOST: 123.249.114.43
+  #   PORT: 5432
+  #   CONFIG: charset=utf8mb4&parseTime=True&loc=Local
+
+# Redis
+REDIS:
+  HOST: 123
+  USER: postgres
+  PASSWORD: panda112131
+  
+  
