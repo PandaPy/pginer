@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-var version = "1.0.1"
+var version = "1.0.3"
 
 var asciiArt = fmt.Sprintf(`
     ____  ___________   ____________
