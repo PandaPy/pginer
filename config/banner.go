@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-var Version = "1.0.3"
+var Version = "1.0.4"
 
 var BannerText = fmt.Sprintf(`
     ____  ___________   ____________
