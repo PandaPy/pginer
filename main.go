@@ -17,6 +17,14 @@ func (m model) Init() tea.Cmd {
 	return nil
 }
 
+func InitialModel() model {
+	return model{
+		stages: []stage.Stage{
+			stage.NewMainStage(),
+		},
+	}
+}
+
 func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	switch msg := msg.(type) {
 	case tea.KeyMsg:
@@ -29,6 +37,8 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		}
 	case stage.InsertStageMsg:
 		m.stages = append(m.stages, msg.NewStage)
+	case tea.QuitMsg:
+		return m, tea.Quit
 	default:
 		cmd := m.stages[len(m.stages)-1].Update(msg)
 		return m, cmd
@@ -47,12 +57,7 @@ func (m model) View() string {
 }
 
 func main() {
-	m := model{
-		stages: []stage.Stage{
-			stage.NewMainStage(),
-		},
-	}
-	if _, err := tea.NewProgram(m).Run(); err != nil {
+	if _, err := tea.NewProgram(InitialModel()).Run(); err != nil {
 		fmt.Println("could not run program:", err)
 		os.Exit(1)
 	}
