@@ -1,7 +1,5 @@
 package component
 
-import "github.com/fatih/color"
-
 type PromptMessageMode int
 
 const (
@@ -13,15 +11,15 @@ const (
 func PromptMessage(contentText string, mode PromptMessageMode) string {
 	switch mode {
 	case SuccessMode:
-		return Text("✔ ").Color(color.FgGreen).String() + Text(contentText+"\n").Color(color.FgWhite).String()
+		return FgGreen.Render("✔ ") + FgWhite.Render(contentText+"\n")
 	case ErrorMode:
-		return Text("✖ ").Color(color.FgRed).String() + Text(contentText+"\n").Color(color.FgWhite).String()
+		return FgRed.Render("✘ ") + FgWhite.Render(contentText+"\n")
 	case DefaultMode:
-		return Text(contentText + "\n").Color(color.FgWhite).String()
+		return FgWhite.Render(contentText + "\n")
 	}
 	return contentText
 }
 
 func LoadingPromptMessage(spinner string, contentText string) string {
-	return Text(spinner+" ").Color(color.FgGreen).String() + Text(contentText+"\n").Color(color.FgWhite).String()
+	return FgGreen.Render(spinner+" ") + FgWhite.Render(contentText+"\n")
 }
