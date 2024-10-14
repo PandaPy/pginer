@@ -1,1 +1,1 @@
-# Pginer - Quick Start for GIN Framework Projects
+# Pginer - Quick Start for GIN Framework Project
